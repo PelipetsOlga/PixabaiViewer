@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
@@ -46,5 +46,13 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
+
+        // Style for splash screen
+        <item name="android:windowSplashScreenBackground" tools:ignore="NewApi">@color/md_theme_primary</item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:ignore="NewApi">1000</item>
+        <item name="android:windowSplashScreenIconBackgroundColor" tools:ignore="NewApi">@color/md_theme_primary</item>
+        <item name="android:windowSplashScreenBrandingImage" tools:ignore="NewApi">@drawable/splash_ic</item>
+        <item name="android:windowSplashScreenBehavior" tools:ignore="NewApi">icon_preferred</item>
     </style>
+
 </resources>
