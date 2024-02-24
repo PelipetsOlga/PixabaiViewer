@@ -3,12 +3,20 @@ plugins {
     id("com.android.application") version "8.2.0-rc03" apply false
     id("org.jetbrains.kotlin.android") version "1.9.22" apply false
     id("com.google.dagger.hilt.android") version "2.44" apply false
+    id("org.jlleitschuh.gradle.ktlint") version "11.1.0"
 }
 buildscript {
     repositories {
+        google()
         mavenCentral()
+        maven(url = "https://plugins.gradle.org/m2/")
     }
     dependencies {
-        classpath ("com.google.dagger:hilt-android-gradle-plugin:2.50")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.50")
+        classpath("org.jlleitschuh.gradle:ktlint-gradle:10.1.0")
     }
+}
+
+allprojects {
+    apply(plugin = "org.jlleitschuh.gradle.ktlint")
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/dest_search">
+    <fragment
+        android:id="@id/dest_search"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="Search screen">
+        <action
+            android:id="@+id/action_to_photo"
+            app:destination="@id/dest_photo" />
+    </fragment>
+    <fragment
+        android:id="@id/dest_photo"
+        android:name="com.example.myapplication.ui.photo.PhotoFragment"
+        android:label="Big Photo" />
+
+</navigation>
