@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.theme
+package com.example.myapplication.base
 
 import android.app.Activity
 import android.os.Build
@@ -26,14 +26,6 @@ fun AppTheme(
 
         darkTheme -> darkScheme
         else -> lightScheme
-    }
-    val view = LocalView.current
-    if (!view.isInEditMode) {
-        SideEffect {
-            val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
-        }
     }
 
     androidx.compose.material3.MaterialTheme(

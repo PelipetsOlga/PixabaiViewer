@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="dest_search" type="id" />
+    <item name="dest_photo" type="id" />
+
+    <item name="action_to_photo" type="id" />
+</resources>

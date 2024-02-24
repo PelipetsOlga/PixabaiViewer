@@ -1,6 +1,7 @@
-package com.example.myapplication.ui.theme
-import androidx.compose.material3.lightColorScheme
+package com.example.myapplication.base
+
 import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 
 internal val lightScheme = lightColorScheme(
     primary = primaryLight,
@@ -229,5 +230,3 @@ internal val highContrastDarkColorScheme = darkColorScheme(
     surfaceContainerHigh = surfaceContainerHighDarkHighContrast,
     surfaceContainerHighest = surfaceContainerHighestDarkHighContrast,
 )
-
-
