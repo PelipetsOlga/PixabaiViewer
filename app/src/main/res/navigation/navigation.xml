@@ -13,7 +13,7 @@
     </fragment>
     <fragment
         android:id="@id/dest_photo"
-        android:name="com.example.myapplication.ui.photo.PhotoFragment"
+        android:name="com.example.photo_ui.PhotoFragment"
         android:label="Big Photo" />
 
 </navigation>

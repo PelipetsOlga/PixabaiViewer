@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.photo
+package com.example.photo_ui
 
 import android.os.Bundle
 import android.util.Log

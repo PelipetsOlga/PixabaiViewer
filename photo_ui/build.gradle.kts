@@ -1,21 +1,16 @@
 plugins {
     kotlin("kapt")
-    id("com.google.dagger.hilt.android")
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
-    namespace = "com.example.myapplication"
+    namespace = "com.example.photo_ui"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.myapplication"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -49,28 +44,18 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":base"))
-    implementation(project(":home_ui"))
-    implementation(project(":photo_ui"))
 
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.junit)
-    implementation(libs.androidx.junitExt)
-    implementation(libs.androidx.espresso)
-    implementation(libs.retrofit.library)
-    implementation(libs.retrofit.converter.gson.library)
-    implementation(libs.okhttp.logging.interceptor.library)
-    implementation(libs.okhttp.library)
-
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.androidx.core.splashscreen)
+    testImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.junitExt)
+    androidTestImplementation(libs.androidx.espresso)
 }
