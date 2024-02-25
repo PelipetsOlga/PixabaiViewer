@@ -1,4 +1,4 @@
-package com.example.myapplication.domain.models
+package com.example.domain.models
 
 data class ImageModel(
     val id: Int,

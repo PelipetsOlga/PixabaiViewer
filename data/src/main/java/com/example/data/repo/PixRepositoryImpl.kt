@@ -1,11 +1,11 @@
-package com.example.myapplication.data.repo
+package com.example.data.repo
 
-import com.example.myapplication.data.api.PixApiHelper
-import com.example.myapplication.data.mappers.toDomain
-import com.example.myapplication.domain.models.ImageModel
-import com.example.myapplication.domain.models.NetworkError
-import com.example.myapplication.domain.models.Result
-import com.example.myapplication.domain.repo.PixRepository
+import com.example.data.api.PixApiHelper
+import com.example.data.mappers.toDomain
+import com.example.domain.models.ImageModel
+import com.example.domain.models.NetworkError
+import com.example.domain.models.Result
+import com.example.domain.repo.PixRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
