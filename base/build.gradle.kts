@@ -43,11 +43,14 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
 
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material)
     implementation(libs.androidx.material3)
+    implementation (libs.coil.compose)
+    implementation(libs.androidx.ui.tooling.preview.android)
 
     testImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.junitExt)

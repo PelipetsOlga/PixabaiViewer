@@ -55,6 +55,8 @@ dependencies {
     implementation(libs.androidx.navigation.ui)
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
+    implementation (libs.coil.compose)
+
     testImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.junitExt)
     androidTestImplementation(libs.androidx.espresso)

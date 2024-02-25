@@ -59,18 +59,18 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.junit)
-    implementation(libs.androidx.junitExt)
-    implementation(libs.androidx.espresso)
     implementation(libs.retrofit.library)
     implementation(libs.retrofit.converter.gson.library)
     implementation(libs.okhttp.logging.interceptor.library)
     implementation(libs.okhttp.library)
-
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.core.splashscreen)
+
+    implementation(libs.androidx.junit)
+    implementation(libs.androidx.junitExt)
+    implementation(libs.androidx.espresso)
 }

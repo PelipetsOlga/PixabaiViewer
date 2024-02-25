@@ -1,4 +1,6 @@
 [versions]
+coilCompose = "2.6.0"
+coilSvg = "2.5.0"
 ktx = "1.12.0"
 appcompat = "1.6.1"
 material = "1.11.0"
@@ -6,7 +8,6 @@ material3 = "1.2.0"
 junit = "4.13.2"
 junitExt = "1.1.5"
 espresso = "3.5.1"
-constraintlayout = "2.1.4"
 navigation_fragment = "2.7.7"
 navigation_ui = "2.7.7"
 dagger_hilt = "2.50"
@@ -16,8 +17,7 @@ retrofit = "2.9.0"
 retrofit_converter_gson = "2.9.0"
 okhttp_logging_interceptor = "4.12.0"
 okhttp = "4.12.0"
-agp = "8.2.0-rc03"
-kotlin = "1.9.22"
+uiToolingPreviewAndroid = "1.6.2"
 
 
 [libraries]
@@ -28,9 +28,9 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3-a
 androidx-junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junitExt = { group = "androidx.test.ext", name = "junit", version.ref = "junitExt" }
 androidx-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
-androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-navigation_fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation_fragment" }
 androidx-navigation_ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation_ui" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 dagger_hilt_android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger_hilt" }
 dagger_hilt_compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger_hilt" }
 kotlinx_coroutines_android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlin_coroutines" }
@@ -39,9 +39,7 @@ retrofit_library = { group = "com.squareup.retrofit2", name = "retrofit", versio
 retrofit_converter_gson_library = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit_converter_gson" }
 okhttp_logging_interceptor_library = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp_logging_interceptor" }
 okhttp_library = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+androidx-ui-tooling-preview-android = { group = "androidx.compose.ui", name = "ui-tooling-preview-android", version.ref = "uiToolingPreviewAndroid" }
 
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
-androidLibrary = { id = "com.android.library", version.ref = "agp" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
