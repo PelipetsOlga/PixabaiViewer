@@ -52,6 +52,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":base"))
+    implementation(project(":home_ui"))
 
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)

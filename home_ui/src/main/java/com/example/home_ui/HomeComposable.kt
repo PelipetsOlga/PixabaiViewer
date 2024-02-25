@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.home
+package com.example.home_ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavController
-import com.example.myapplication.R
 
 @Composable
 fun HomeComposable(
@@ -21,7 +20,10 @@ fun HomeComposable(
 
     Column {
         Text(text = "Home Fragment")
-        Button(onClick = { navController.navigate(R.id.action_to_photo) }) {
+        Button(onClick = {
+            navController.navigate(R.id.action_to_photo)
+        }
+        ) {
             Text("Go")
         }
         LazyColumn() {

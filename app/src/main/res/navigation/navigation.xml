@@ -5,7 +5,7 @@
     app:startDestination="@id/dest_search">
     <fragment
         android:id="@id/dest_search"
-        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:name="com.example.home_ui.HomeFragment"
         android:label="Search screen">
         <action
             android:id="@+id/action_to_photo"
