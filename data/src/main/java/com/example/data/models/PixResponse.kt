@@ -1,8 +1,6 @@
-package com.example.myapplication.data.models
+package com.example.data.models
 
-import com.example.myapplication.data.models.PixImage
-
-class PixResponse(
+internal class PixResponse(
     val total: Int,
     val totalHits: Int,
     val hits: List<PixImage>

@@ -1,6 +1,6 @@
-package com.example.myapplication.data.models
+package com.example.data.models
 
- data class PixImage(
+internal data class PixImage(
     val id: Int,
     val pageURL: String,
     val type: String,
