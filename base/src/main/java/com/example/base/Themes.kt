@@ -1,4 +1,4 @@
-package com.example.myapplication.base
+package com.example.base
 
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
