@@ -11,7 +11,7 @@ import androidx.compose.runtime.getValue
 import androidx.navigation.NavController
 
 @Composable
-fun HomeComposable(
+internal fun HomeComposable(
     navController: NavController,
     viewModel: HomeViewModel
 ) {

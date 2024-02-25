@@ -13,7 +13,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
- class PixRepositoryImpl @Inject constructor(
+internal class PixRepositoryImpl @Inject constructor(
     private val apiHelper: PixApiHelper
 ) : PixRepository {
     override fun getSearchResults(keyword: String): Flow<Result<List<ImageModel>>> {
