@@ -1,4 +1,4 @@
-package com.example.myapplication.data.api
+package com.example.data.api
 
 import com.example.myapplication.data.models.PixResponse
 import retrofit2.http.GET

@@ -1,11 +1,10 @@
 package com.example.myapplication.ui.home
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.domain.models.ImageModel
-import com.example.myapplication.domain.models.Result
-import com.example.myapplication.domain.repo.PixRepository
+import com.example.domain.models.ImageModel
+import com.example.domain.models.Result
+import com.example.domain.repo.PixRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

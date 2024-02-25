@@ -1,7 +1,7 @@
-package com.example.myapplication.data.mappers
+package com.example.data.mappers
 
+import com.example.domain.models.ImageModel
 import com.example.myapplication.data.models.PixImage
-import com.example.myapplication.domain.models.ImageModel
 
 internal fun PixImage.toDomain(): ImageModel {
     return ImageModel(
