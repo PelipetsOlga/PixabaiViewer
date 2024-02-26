@@ -1,15 +1,16 @@
 package com.example.photo_ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.base.AppTheme
+import com.example.domain.models.ImageModel
+import com.example.domain.models.imageModelArg
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,13 +21,22 @@ class PhotoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        Log.d("blabla", "photo ${viewModel.hashCode()}")
+        val image = arguments?.getParcelable<ImageModel>(imageModelArg)
+        if (image == null) {
+            findNavController().popBackStack()
+        } else {
+            viewModel.setImage(image)
+        }
         return ComposeView(requireContext()).apply {
             setContent {
-                Surface {
-                    Text(text = "Photo Fragment")
+                AppTheme {
+                    PhotoComposable(viewModel = viewModel, backClick = { onBackButtonClick() })
                 }
             }
         }
+    }
+
+    private fun onBackButtonClick() {
+        findNavController().popBackStack()
     }
 }

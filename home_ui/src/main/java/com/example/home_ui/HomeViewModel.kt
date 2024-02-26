@@ -19,7 +19,11 @@ class HomeViewModel @Inject constructor(
     private val _results = MutableStateFlow(listOf<ImageModel>())
     val results: Flow<List<ImageModel>> get() = _results
 
-    fun makeSearch(keyword: String) {
+    init {
+        makeSearch("fruits")
+    }
+
+    private fun makeSearch(keyword: String) {
         viewModelScope.launch {
             try {
                 repo.getSearchResults(keyword).collect { result ->

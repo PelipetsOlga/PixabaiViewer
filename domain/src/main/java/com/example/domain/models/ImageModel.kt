@@ -1,5 +1,9 @@
 package com.example.domain.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class ImageModel(
     val id: Int,
     val tags: List<String>,
@@ -15,6 +19,23 @@ data class ImageModel(
     val comments: Int,
     val user: String,
     val userImageURL: String
+) : Parcelable
+
+val imageModelEmpty = ImageModel(
+    id = 1,
+    user = "",
+    likes = 0,
+    tags = emptyList(),
+    previewURL = "",
+    largeImageURL = "",
+    comments = 0,
+    views = 0,
+    previewWidth = 0,
+    previewHeight = 0,
+    imageHeight = 0,
+    imageWidth = 0,
+    downloads = 0,
+    userImageURL = ""
 )
 
 val imageModelMock = ImageModel(
@@ -33,3 +54,5 @@ val imageModelMock = ImageModel(
     downloads = 20,
     userImageURL = "https://cdn.pixabay.com/user/2015/11/27/06-58-54-609_250x250.jpg"
 )
+
+const val imageModelArg = "imageArg"
