@@ -1,27 +1,28 @@
 package com.example.data.repo
 
-import com.example.data.api.PixApiHelper
-import com.example.data.mappers.toDomain
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import com.example.data.api.PixApi
 import com.example.domain.models.ImageModel
-import com.example.domain.models.NetworkError
-import com.example.domain.models.Result
 import com.example.domain.repo.PixRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 internal class PixRepositoryImpl @Inject constructor(
-    private val apiHelper: PixApiHelper
+    private val api: PixApi
 ) : PixRepository {
-    override fun getSearchResults(keyword: String): Flow<Result<List<ImageModel>>> {
-        return apiHelper.search(keyword)
-            .map { response -> response.hits.map { it.toDomain() } }
-            .map { Result.withValue(it) }
-            .catch {
-                emit(Result.withError(NetworkError(throwable = it)))
-            }
+
+    override fun getSearchResultStream(query: String): Flow<PagingData<ImageModel>> {
+        return Pager(
+            config = PagingConfig(enablePlaceholders = false, pageSize = NETWORK_PAGE_SIZE),
+            pagingSourceFactory = { PixPagingSource(api, query) }
+        ).flow
+    }
+
+    companion object {
+        private const val NETWORK_PAGE_SIZE = 20
     }
 }

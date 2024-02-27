@@ -1,8 +1,6 @@
 package com.example.data.di
 
 import com.example.data.api.PixApi
-import com.example.data.api.PixApiHelper
-import com.example.data.api.PixApiHelperImpl
 import com.example.data.repo.PixRepositoryImpl
 import com.example.domain.repo.PixRepository
 import dagger.Binds
@@ -28,7 +26,7 @@ internal class ApiModule {
     @Singleton
     fun provideRetrofit(): Retrofit {
         val interceptor = HttpLoggingInterceptor()
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC)
         val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
         return Retrofit.Builder()
@@ -42,12 +40,6 @@ internal class ApiModule {
     @Singleton
     fun provideApi(retrofit: Retrofit): PixApi {
         return retrofit.create(PixApi::class.java)
-    }
-
-    @Provides
-    @Singleton
-    fun provideApiHelper(api: PixApi): PixApiHelper {
-        return PixApiHelperImpl(api)
     }
 }
 

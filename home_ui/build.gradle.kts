@@ -55,6 +55,8 @@ dependencies {
     implementation(libs.androidx.navigation.ui)
     implementation(libs.dagger.hilt.android)
     kapt(libs.dagger.hilt.compiler)
+    implementation (libs.androidx.paging.runtime)
+    implementation (libs.androidx.paging.compose)
 
 
     testImplementation(libs.androidx.junit)

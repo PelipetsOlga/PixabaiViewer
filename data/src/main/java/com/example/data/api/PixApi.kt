@@ -8,6 +8,7 @@ internal interface PixApi {
     @GET("/api/")
     suspend fun getSearchResults(
         @Query("key") key: String = "42532643-50f9c097dc69d5dc2b56fc669",
-        @Query("q") keyword: String
+        @Query("q") keyword: String,
+        @Query("page") page: String = "1"
     ): PixResponse
 }

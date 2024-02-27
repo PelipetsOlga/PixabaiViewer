@@ -36,6 +36,9 @@ android {
 dependencies {
 
     implementation(libs.kotlinx.coroutines.android)
+    implementation (libs.androidx.paging.runtime)
+    implementation (libs.androidx.paging.compose)
+    
     testImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.junitExt)
     androidTestImplementation(libs.androidx.espresso)

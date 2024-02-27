@@ -45,6 +45,8 @@ dependencies {
     implementation(libs.retrofit.converter.gson.library)
     implementation(libs.okhttp.logging.interceptor.library)
     implementation(libs.okhttp.library)
+    implementation (libs.androidx.paging.runtime)
+    implementation (libs.androidx.paging.compose)
 
     testImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.junitExt)
