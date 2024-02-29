@@ -24,14 +24,14 @@ import androidx.compose.ui.unit.dp
 import com.example.base.R
 import com.example.base.composables.HorizontalBigPhoto
 import com.example.base.composables.VerticalBigPhoto
-import com.example.domain.models.imageModelEmpty
+import com.example.domain.models.emptyImageModel
 
 @Composable
 internal fun PhotoComposable(
     viewModel: PhotoViewModel,
     backClick: () -> Unit
 ) {
-    val image by viewModel.image.collectAsState(imageModelEmpty)
+    val image by viewModel.image.collectAsState(emptyImageModel)
     val configuration = LocalConfiguration.current
 
     Box(modifier = Modifier.fillMaxSize()) {

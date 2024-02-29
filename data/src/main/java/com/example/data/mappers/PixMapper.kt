@@ -18,6 +18,6 @@ internal fun PixImage.toDomain(): ImageModel {
         comments = comments,
         user = user,
         userImageURL = userImageURL,
-        tags = tags.split(", ")
+        tags = tags.split(", ").filter { it.isNotBlank() }
     )
 }

@@ -21,8 +21,8 @@ data class ImageModel(
     val userImageURL: String
 ) : Parcelable
 
-val imageModelEmpty = ImageModel(
-    id = 1,
+val emptyImageModel = ImageModel(
+    id = 0,
     user = "",
     likes = 0,
     tags = emptyList(),
@@ -42,7 +42,7 @@ val imageModelMock = ImageModel(
     id = 1,
     user = "Gardener",
     likes = 100,
-    tags = listOf("lemon", "apple"),
+    tags = listOf("lemon", "apple", "fruits"),
     previewURL = "https://cdn.pixabay.com/photo/2015/08/13/20/06/flower-887443_150.jpg",
     largeImageURL = "https://pixabay.com/get/g6dbfac0adc48e43a983f0558dbc2fec343a9f55183f7136759436377675eff99639bedf49098db0d26ede93c6f596dd7683886ac765d5cc0811be784ef3c8b5b_1280.jpg",
     comments = 10,
