@@ -49,6 +49,9 @@ android {
 }
 
 dependencies {
+//    implementation("io.cux:analytics-compose-sdk:0.0.1-beta2")
+    implementation(libs.cux.compose)
+
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":base"))

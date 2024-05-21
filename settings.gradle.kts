@@ -10,6 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+//        maven(url = "https://packagecloud.io/cux/public-compose-gradle/maven2")
+        maven(url = "https://packagecloud.io/cux/public-compose-dev-gradle/maven2")
     }
 }
 

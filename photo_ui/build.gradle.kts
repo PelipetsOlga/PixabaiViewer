@@ -47,6 +47,8 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":base"))
 
+    implementation(libs.cux.compose)
+
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material)

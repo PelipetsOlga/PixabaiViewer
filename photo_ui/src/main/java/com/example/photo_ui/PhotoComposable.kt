@@ -25,6 +25,9 @@ import com.example.base.R
 import com.example.base.composables.HorizontalBigPhoto
 import com.example.base.composables.VerticalBigPhoto
 import com.example.domain.models.emptyImageModel
+import io.cux.analytics_sdk.composable.UnmaskComposableOnDispose
+import io.cux.analytics_sdk.composable.maskElement
+import io.cux.analytics_sdk.composable.rememberComposableId
 
 @Composable
 internal fun PhotoComposable(
@@ -33,6 +36,7 @@ internal fun PhotoComposable(
 ) {
     val image by viewModel.image.collectAsState(emptyImageModel)
     val configuration = LocalConfiguration.current
+    val elementId = rememberComposableId()
 
     Box(modifier = Modifier.fillMaxSize()) {
         Card(
@@ -60,7 +64,7 @@ internal fun PhotoComposable(
                             color = backgroundColor,
                             radius = this.size.maxDimension
                         )
-                    },
+                    }.maskElement(elementId),
                     tint = iconTintColor,
                     painter = painterResource(id = R.drawable.baseline_arrow_back),
                     contentDescription = stringResource(id = R.string.cd_back)
@@ -68,4 +72,6 @@ internal fun PhotoComposable(
             }
         }
     }
+
+    UnmaskComposableOnDispose(elementId)
 }

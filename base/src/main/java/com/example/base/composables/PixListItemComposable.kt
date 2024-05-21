@@ -18,9 +18,13 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.style.TextAlign
 import com.example.base.R
 import com.example.domain.models.ImageModel
+import io.cux.analytics_sdk.composable.UnmaskComposableOnDispose
+import io.cux.analytics_sdk.composable.maskElement
+import io.cux.analytics_sdk.composable.rememberComposableId
 
 @Composable
 fun VerticalPixListItem(pixImage: ImageModel, modifier: Modifier, onClick: (ImageModel) -> Unit) {
+
     Card(
         onClick = { onClick(pixImage) },
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
@@ -52,10 +56,13 @@ fun VerticalPixListItem(pixImage: ImageModel, modifier: Modifier, onClick: (Imag
             }
         }
     }
+
 }
 
 @Composable
 fun HorizontalPixListItem(pixImage: ImageModel, modifier: Modifier, onClick: (ImageModel) -> Unit) {
+    val userId = rememberComposableId()
+
     Card(
         onClick = { onClick(pixImage) },
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
@@ -79,6 +86,7 @@ fun HorizontalPixListItem(pixImage: ImageModel, modifier: Modifier, onClick: (Im
                     textAlign = TextAlign.Start,
                     maxLines = 1,
                     style = MaterialTheme.typography.titleMedium,
+                    modifier = Modifier.maskElement(userId)
                 )
                 pixImage.tags.sortedByDescending { it.length }.forEach {
                     TagChip(text = it)
@@ -86,4 +94,6 @@ fun HorizontalPixListItem(pixImage: ImageModel, modifier: Modifier, onClick: (Im
             }
         }
     }
+
+    UnmaskComposableOnDispose(userId)
 }
